@@ -6,7 +6,7 @@ from pymongo import MongoClient
 
 # ================== CONFIG ==================
 BOT_TOKEN = os.getenv("8305203190:AAEICcb-AcRpUO3JhxDuvvJ7jnX635oXt88")
-ADMIN_ID = int(os.getenv("7579033502"))
+ADMIN_ID = int(os.getenv("ADMIN_ID"))
 SUPPORT = os.getenv("@qwallethelperbot")
 
 MONGO_URL = os.getenv("mongodb+srv://hdnfaer:6rcwEsRoRUyY5URP@qwallet1.regstjp.mongodb.net/Qwallet1")
