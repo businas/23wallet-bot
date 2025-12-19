@@ -1,22 +1,22 @@
 import os
-import datetime
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ParseMode
 from pymongo import MongoClient
 
-# ================== CONFIG ==================
-BOT_TOKEN = os.getenv("8305203190:AAEICcb-AcRpUO3JhxDuvvJ7jnX635oXt88")
-ADMIN_ID = int(os.getenv("ADMIN_ID"))
-SUPPORT = os.getenv("@qwallethelperbot")
+# ========== CONFIG ==========
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+ADMIN_ID = int(os.getenv("ADMIN_ID", "0"))
+SUPPORT = os.getenv("SUPPORT")
 
-MONGO_URL = os.getenv("mongodb+srv://hdnfaer:6rcwEsRoRUyY5URP@qwallet1.regstjp.mongodb.net/Qwallet1")
+MONGO_URL = os.getenv("MONGO_URL")
+
 client = MongoClient(MONGO_URL)
 db = client["wallet"]
 users = db["users"]
 txs = db["transactions"]
 withdraws = db["withdraws"]
 
-# ================== BOT INIT (FIXED) ==================
+# ========== BOT INIT ==========
 bot = Bot(token=BOT_TOKEN, parse_mode=ParseMode.MARKDOWN)
 dp = Dispatcher(bot)
 
